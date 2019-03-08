@@ -1,16 +1,23 @@
 public class Aplikasi{
 
     public static void main(String args[]){
-        Mahasiswa mhs1 = new Mahasiswa("17090150","Muiz");
-        Mahasiswa mhs2 = new Mahasiswa("17090155","Abdul");
-        //mhs1.nama = "Muiz";
-        //mhs1.nim = "17090150";
+        //System.out.println("1 : " + args[0]);
+        //System.out.println("2 : " + args[1]);
+        //int angka = 5;
 
-        //System.out.println(mhs1.nim+" "+ mhs1.nama);
-        //System.out.println(mhs2.nim+" "+ mhs2.nama);
-        mhs1.cetak();
-        mhs2.cetak();
-        System.out.println(mhs1.getNim());
+        if(args.length == 1){
+            int angka = Integer.parseInt(args[0]);
+
+            String hasil = (angka % 2 == 0) ? "genap" : "ganjil";
+            System.out.println(hasil);
+            
+        }else{
+            System.out.println(
+                "Gunakan : java Aplikasi {angka}"
+            );
+        }
+
+        
     }
 
 }
