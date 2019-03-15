@@ -25,5 +25,6 @@ public class Aplikasi {
 
         dsn1.cetak();
         dsn2.cetak();
+        
     }
 }
