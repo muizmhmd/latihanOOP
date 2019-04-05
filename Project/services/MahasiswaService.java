@@ -1,5 +1,8 @@
 package services;
 
+import java.util.*;
+import entity.*;
+
 public class MahasiswaService{
 
     private static List<Mahasiswa> data = new LinkedList<Mahasiswa>();
@@ -9,9 +12,15 @@ public class MahasiswaService{
         System.out.println("Data telah tersimpan");
     }
 
-    public void ubahData(){}
+    public void ubahData(Mahasiswa mhs){
+        int idx = data.indexOf(mhs);
+        if(idx >= 0){
+            data.set(idx, mhs);
+            System.out.println("Data telah berubah");
+        }
+    }
 
-    public void hapusData(){}
+    public void hapusData(Mahasiswa mhs){}
 
     public void tampilkanData(){
         System.out.println("\n-- data mahasiswa --");
