@@ -14,7 +14,19 @@ public class Aplikasi{
         int opsi = 5;
         do {
             tampilkanMenu();
-            opsi = scanner.nextInt();
+            try {
+                scanner = new Scanner(System.in);
+                opsi = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.err.println("Silahkan input menunya");
+                opsi = 0;
+            } catch (NoSuchElementException e) {
+                System.err.println("Inputnya exhaust");
+                opsi = 0;
+            } catch (IllegalStateException e){
+                System.err.println("Scanner ketutup");
+                opsi = 0;
+            }
             seleksi(opsi);
         } while (opsi != 5);
     }
@@ -28,11 +40,20 @@ public class Aplikasi{
                 callFromUbahData();
                 break;
             case 3:
+                callFromHapusData();
                 break;
             case 4:
                 service.tampilkanData();
                 break;
         }
+    }
+
+    private static void callFromHapusData(){
+        scanner = new Scanner(System.in);
+
+        System.out.println("NIM : ");
+        String nim = scanner.nextLine();
+        service.hapusData(nim);
     }
 
     private static void callFromUbahData(){

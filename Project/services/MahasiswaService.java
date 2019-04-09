@@ -20,7 +20,13 @@ public class MahasiswaService{
         }
     }
 
-    public void hapusData(Mahasiswa mhs){}
+    public void hapusData(String nim){
+        int idx = data.indexOf(new Mahasiswa(nim, "", ""));
+        if(idx >= 0 ){
+            data.remove(idx);
+            System.out.println("Data telah dihapus");
+        }
+    }
 
     public void tampilkanData(){
         System.out.println("\n-- data mahasiswa --");
